@@ -32,7 +32,7 @@ export const getTasks = createAsyncThunk(
     try {
       let token = localStorage.getItem("token");
       let response = await axios.get(
-        `${import.meta.env.VITE_API_URL}/api/tasks`,
+        `${import.meta.env.VITE_API_URL}api/tasks`,
         {
           headers: { Authorization: `Bearer ${token}` },
         }

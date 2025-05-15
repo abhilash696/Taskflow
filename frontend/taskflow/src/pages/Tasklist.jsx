@@ -12,7 +12,7 @@ export default function TaskDashboard() {
 
   useEffect(() => {
     dispatch(getTasks());
-  }, []);
+  }, [tasks]);
 
   // Group tasks by status
   const groupedTasks = tasks.reduce((acc, task) => {
