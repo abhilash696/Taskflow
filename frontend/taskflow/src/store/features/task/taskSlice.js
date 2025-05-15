@@ -31,9 +31,12 @@ export const getTasks = createAsyncThunk(
   async (_, { rejectWithValue }) => {
     try {
       let token = localStorage.getItem("token");
-      let response = await axios.get("http://localhost:5000/api/tasks", {
-        headers: { Authorization: `Bearer ${token}` },
-      });
+      let response = await axios.get(
+        `${import.meta.env.VITE_API_URL}/api/tasks`,
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      );
       return response.data.tasks;
     } catch (err) {
       return rejectWithValue(
